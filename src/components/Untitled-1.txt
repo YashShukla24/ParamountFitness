@@ -1,0 +1,17 @@
+  UpdateCustomer() {
+    axios
+      .put(
+        "http://localhost:25512/api/Customer/UpdateCustomer/",
+        this.state.editCustomerdata
+      )
+      .then(response => {
+        this.refreshData();
+        this.setState({
+          editmodal: !this.state.editmodal,
+          editCustomerdata: {
+            CustomerId: "",
+            Status: false
+          }
+        });
+      });
+  }
